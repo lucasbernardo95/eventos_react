@@ -1,4 +1,4 @@
-# Project Eventos_FrontEnd
+# Project eventos_react
 
 ## Itens implementados:
 #### H. Criar single page app utilizando react e E. Utilizar Bootstrap 4

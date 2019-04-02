@@ -157,7 +157,7 @@ class App extends Component {
                           <input ref="data" type="text" className="form-control" placeholder="Data"></input>
                         </div>
                     </div>
-                    <button onClick={(e)=>this.onSaveDate(e)} className="btn btn-primary btn-lg btn-block">Cadastrar</button>
+                    <button onClick={(e)=>this.onSaveDate(e)} className="btn btn-primary btn-lg btn-block">Salvar</button>
                   </form>
 
 
