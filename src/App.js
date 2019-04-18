@@ -63,18 +63,16 @@ class App extends Component {
           id_evento: 0
       }); //atualiza o valor do id para evitar bugs
 
-      let url = new Request('http://localhost:8080/evento/addOrUpdateText');
+      let url = new Request('http://localhost:8080/evento');
       fetch(url, {
         method: 'POST',
-
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(eventoSave)
       })
-      .then(function(response) {
-          if ( response.status !== 200 ) {
-              console.log('Status Code: ' +  response.status);
-              return;
-          }
-      
+      .then(function(response) {   
           response.json().then(function(data) {
               console.log(data);
           });
@@ -92,10 +90,12 @@ class App extends Component {
           eventos : lista
       });
 
-      let url = 'http://localhost:8080/evento/';
+      let url = 'http://localhost:8080/evento';
 
-      fetch(url + eventoDelete.id, {
-        method: 'POST'
+      fetch(url , {
+        method: 'DELETE',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(eventoDelete)
       })
       .then(function(response) {
           if ( response.status !== 200 ) {
