@@ -47,7 +47,7 @@ class App extends Component {
           } 
           lista.push(newEvento);
           eventoSave = newEvento;
-          eventoSave.id = 0;
+          
       } else { //update evento
           let index = this.state.index;
          
@@ -75,6 +75,7 @@ class App extends Component {
       .then(function(response) {   
           response.json().then(function(data) {
               console.log(data);
+              eventoSave.id = data.id;
           });
       })
       this.refs.myForm.reset();
